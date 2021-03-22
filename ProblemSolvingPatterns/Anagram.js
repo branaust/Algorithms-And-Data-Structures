@@ -13,6 +13,7 @@ const isAnagram = (anagram1, anagram2) => {
     for (i = 0; i < anagram1.length; i++) {
         let letter = anagram1[i]
         output[letter] ? output[letter] += 1 : output[letter] = 1;
+        console.log(output)
     }
 
     for (i = 0; i < anagram2.length; i++) {
@@ -23,6 +24,7 @@ const isAnagram = (anagram1, anagram2) => {
         }
     }
     return true
+
 }
 
 anagram1 = "anagram"
