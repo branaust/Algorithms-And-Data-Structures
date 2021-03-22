@@ -7,31 +7,21 @@ const sameFrequency = (num1, num2) => {
     // OUTPUT: BOOLEAN
     // CHECK if nums are equal in length
 
-    let newNum1 = num1.toString().split('')
-    let newNum2 = num2.toString().split('')
 
-    if (newNum1.length !== newNum2.length) return false
+    let newNum1 = num1.toString()
+    let newNum2 = num2.toString()
 
-    let checker = {}
-
+    if (newNum1.length !== newNum2.length) return false;
 
     for (let i = 0; i < newNum1.length; i++) {
-        let num = newNum1[i]
-        checker[num] ? checker[num] + 1 : checker[num] = 1
-        console.log(checker)
+        if (newNum1.indexOf(newNum2[i]) <= -1) return false
     }
 
-    for (let j = 0; j < newNum2.length; j++) {
-        let num = newNum2[j]
-        if (!checker[num]) return false
-        else checker[num] -= 1
-        console.log(checker)
-    }
-
-    return true
+    return true;
 }
 
-const num1 = 12356
+
+const num1 = 1234
 const num2 = 4321
 
 console.log(sameFrequency(num1, num2))
