@@ -1,4 +1,4 @@
-const areThereDuplicates = (arr) => {
+const areThereDuplicates = (...args) => {
     // INPUT: array of variables
     // Check is arr is empty, if so return false
     // Create obj, map arr to object. For each variable if object already exists, return true. If loop finishes, return false
