@@ -5,7 +5,7 @@ const maxSum = (arr, num) => {
     // EDGE CASE if arr is empty,  return null
     // EDGE CASE if num > arr.length return null
 
-    if (num > arr.length) return null
+    if (!arr || num > arr.length) return null
 
     let maxSum = 0
     let tempSum = 0
