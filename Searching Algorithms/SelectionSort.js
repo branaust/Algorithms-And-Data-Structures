@@ -9,11 +9,10 @@ const selectionSort = (arr) => {
                 let temp = arr[i]
                 arr[i] = arr[min]
                 arr[min] = temp
-                console.log(arr)
             }
         }
     }
     return arr
 }
 
-console.log(selectionSort([20,4,44,23,6,33,26,1,2,777,3]))
+console.log(selectionSort([20, 4, 44, 23, 6, 33, 26, 1, 2, 777, 3]))
