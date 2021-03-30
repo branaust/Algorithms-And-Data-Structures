@@ -15,4 +15,4 @@ const selectionSort = (arr) => {
     return arr
 }
 
-console.log(selectionSort([20, 4, 44, 23, 6, 33, 26, 1, 2, 777, 3]))
+console.log(selectionSort([5, 7, 10, 2, 5, 2, 44, 2222, 43423, 345645, 634523]))
