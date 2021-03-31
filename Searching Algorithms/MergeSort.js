@@ -14,16 +14,13 @@ const mergeSort = (arr1, arr2) => {
         }
     }
 
-    if (i === arr1.length && j < arr2.length) {
-        for (j; j < arr2.length; j++) {
-            sorted.push(arr2[j])
-        }
+    while (i < arr1.length) {
+        sorted.push(arr1[i])
+        i++
     }
-
-    if (j === arr2.length && i < arr1.length) {
-        for (i; i < arr1.length; i++) {
-            sorted.push(arr1[i])
-        }
+    while (j < arr2.length) {
+        sorted.push(arr2[j])
+        j++
     }
 
     return sorted
