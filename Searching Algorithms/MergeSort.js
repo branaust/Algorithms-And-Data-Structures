@@ -1,4 +1,4 @@
-const mergeSort = (arr1, arr2) => {
+const merge = (arr1, arr2) => {
     let sorted = []
     let i = 0
     let j = 0
