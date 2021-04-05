@@ -66,7 +66,7 @@ class SinglyLinkedList {
             newNode.next = oldHead
         }
         this.length++
-        return newNode
+        return this
 
     }
 }
@@ -76,5 +76,4 @@ list.push('HEY')
 list.push('Whatsup?')
 list.push('Not much you?')
 list.push('Not much you?')
-list.unshift('AYYAYY')
-console.log(list)
+console.log(list.unshift('AYYAYY'))
