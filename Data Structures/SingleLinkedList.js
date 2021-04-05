@@ -83,13 +83,49 @@ class SinglyLinkedList {
         return current
     }
 
-    set(index, value) {
+    set(index, val) {
         let node = this.get(index)
         if (node) {
-            node.val = value
+            node.val = val
             return true
         }
         return false
+    }
+    insert(index, val) {
+        if (index < 0 || index > this.length) {
+            return false
+        }
+        if (index === 0) {
+            return !!this.unshift(val)
+        }
+        if (index === this.length) {
+            return !!this.push(val)
+        }
+        let newNode = new Node(val)
+        let preNode = this.get(index - 1)
+        let postNode = this.get(index)
+        if (postNode) {
+            preNode.next = newNode
+            newNode.next = postNode
+            this.length++
+            return !!newNode
+        }
+        return null
+    }
+
+    remove(index) {
+        if (index < 0 || index > this.length) {
+            return false
+        }
+        if (index === this.length) {
+            return !!this.pop()
+        }
+        let preNode = this.get(index - 1)
+        let postNode = this.get(index + 1)
+        if (postNode) {
+            preNode.next = postNode
+            return true
+        }
     }
 }
 
@@ -99,6 +135,6 @@ list.push('Whatsup?')
 list.push('Not much you?')
 list.push('Not much you?')
 list.unshift('AYYAYY')
-list.get(1)
-console.log(list.set(1, 'WTF'))
+list.set(1, 'WTF')
+console.log(list.insert(2, 'I AM INSERTED NODE'))
 console.log(list.get(1))
