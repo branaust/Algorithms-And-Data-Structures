@@ -81,7 +81,15 @@ class SinglyLinkedList {
             counter++
         }
         return current
+    }
 
+    set(index, value) {
+        let node = this.get(index)
+        if (node) {
+            node.val = value
+            return true
+        }
+        return false
     }
 }
 
@@ -91,4 +99,6 @@ list.push('Whatsup?')
 list.push('Not much you?')
 list.push('Not much you?')
 list.unshift('AYYAYY')
+list.get(1)
+console.log(list.set(1, 'WTF'))
 console.log(list.get(1))
