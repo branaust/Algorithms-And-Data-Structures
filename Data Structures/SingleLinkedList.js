@@ -117,14 +117,36 @@ class SinglyLinkedList {
         if (index < 0 || index > this.length) {
             return false
         }
-        if (index === this.length) {
+        if (index === 0) {
+            return this.shift()
+        }
+        if (index === this.length - 1) {
             return !!this.pop()
         }
         let preNode = this.get(index - 1)
+        let removed = this.get(index)
         let postNode = this.get(index + 1)
         if (postNode) {
             preNode.next = postNode
-            return true
+            this.length--
+            return removed
+        }
+    }
+    reverse() {
+
+        for (let i = 0; i < this.length - 1; i++) {
+            let node = this.head
+            this.head = this.tail
+            this.tail = node
+            let prev = null
+            let next = null
+            for (let i = 0; i < this.length; i++) {
+                next = node.next
+                node.next = prev
+                prev = node
+                node = next
+            }
+            return this
         }
     }
 }
@@ -137,4 +159,6 @@ list.push('Not much you?')
 list.unshift('AYYAYY')
 list.set(1, 'WTF')
 console.log(list.insert(2, 'I AM INSERTED NODE'))
+console.log(list.get(1))
+console.log(list.remove(2))
 console.log(list.get(1))
