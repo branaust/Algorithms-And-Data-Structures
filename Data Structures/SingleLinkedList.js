@@ -48,7 +48,20 @@ class SinglyLinkedList {
         let oldHead = this.head
         this.head = oldHead.next
         this.length--;
+        if (this.length === 0) {
+            this.tail = null
+        }
         return oldHead
+    }
+
+    unshift(val) {
+        let newNode = new Node(val);
+        let oldHead = this.head
+        this.head = newNode
+        newNode.next = oldHead
+        this.length++
+        return newNode
+
     }
 }
 
@@ -57,4 +70,5 @@ list.push('HEY')
 list.push('Whatsup?')
 list.push('Not much you?')
 list.push('Not much you?')
-console.log(list.shift())
+list.unshift('AYYAYY')
+console.log(list)
