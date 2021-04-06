@@ -30,8 +30,23 @@ class DoublyLinkedList {
         return this
     }
 
+    pop() {
+        let oldTail = this.tail
+        if (!this.head) return undefined
+        if (this.length === 1) {
+            this.head = null
+            this.tail = null
+        } else {
+            this.tail = oldTail.prev
+            this.tail.next = null
+        }
+        this.length--
+        return oldTail
+    }
 }
 
 let list = new DoublyLinkedList
-console.log(list.push('HELLO MATZ'))
-console.log(list.push('Is this thing on?'))
+list.push('HELLO MATZ')
+list.push('Is this thing on?')
+console.log(list.pop())
+console.log(list)

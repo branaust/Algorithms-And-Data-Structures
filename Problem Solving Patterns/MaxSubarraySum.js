@@ -4,7 +4,7 @@ const maxSubarraySum = (arr, target) => {
     // OUTPUT: largest number
     // NOTE: Solve using sliding window method
 
-    if (num > arr.length) return null
+    if (target > arr.length) return null
 
     let maxSum = 0
 
