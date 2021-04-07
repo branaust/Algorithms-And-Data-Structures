@@ -44,10 +44,25 @@ class DoublyLinkedList {
         this.length--
         return oldTail
     }
+
+    shift() {
+        let oldHead = this.head
+        if (!this.head) return undefined
+        if (this.length === 1) {
+            this.head = null
+            this.tail = null
+        } else {
+            this.head = oldHead.next
+            this.head.prev = null
+            oldHead.next = null
+        }
+        this.length--
+        return oldHead
+    }
 }
 
 let list = new DoublyLinkedList
 list.push('HELLO MATZ')
 list.push('Is this thing on?')
-console.log(list.pop())
+console.log(list.shift())
 console.log(list)
