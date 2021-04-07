@@ -59,10 +59,25 @@ class DoublyLinkedList {
         this.length--
         return oldHead
     }
+
+    unshift(val) {
+        let newNode = new Node(val)
+        if (!this.head) {
+            this.head = newNode
+            this.tail = newNode
+        }
+        else {
+            newNode.next = this.head
+            this.head = newNode
+            newNode.next.prev = newNode
+        }
+        this.length++
+        return this
+    }
 }
 
 let list = new DoublyLinkedList
 list.push('HELLO MATZ')
 list.push('Is this thing on?')
-console.log(list.shift())
-console.log(list)
+console.log(list.unshift('SHOULD BE NUM 1'))
+console.log(list.head.next)
