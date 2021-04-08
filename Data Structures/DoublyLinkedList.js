@@ -74,10 +74,37 @@ class DoublyLinkedList {
         this.length++
         return this
     }
+
+    get(index) {
+        if (index < 0 || index >= this.length) return null
+
+        let half = this.length / 2
+        if (index <= half) {
+            let counter = 0
+            let current = this.head
+            while (counter !== index) {
+                current = current.next
+                counter++
+            }
+        } else {
+            let current = this.tail
+            let counter = this.length - 1
+            while (counter !== index) {
+                current = current.prev
+                counter--
+            }
+        }
+        return current
+    }
 }
 
 let list = new DoublyLinkedList
-list.push('HELLO MATZ')
-list.push('Is this thing on?')
-console.log(list.unshift('SHOULD BE NUM 1'))
-console.log(list.head.next)
+list.push('One')
+list.push('Two')
+list.push('Three')
+list.push('Four')
+list.push('Five')
+list.push('Six')
+list.push('Seven')
+list.push('Eight')
+console.log(list.get(3))
