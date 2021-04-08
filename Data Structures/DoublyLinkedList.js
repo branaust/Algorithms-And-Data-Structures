@@ -77,7 +77,6 @@ class DoublyLinkedList {
 
     get(index) {
         if (index < 0 || index >= this.length) return null
-
         let half = this.length / 2
         if (index <= half) {
             let counter = 0
@@ -86,6 +85,7 @@ class DoublyLinkedList {
                 current = current.next
                 counter++
             }
+            return current
         } else {
             let current = this.tail
             let counter = this.length - 1
@@ -93,8 +93,18 @@ class DoublyLinkedList {
                 current = current.prev
                 counter--
             }
+            return current
         }
-        return current
+    }
+
+    set(index, val) {
+        let editNode = this.get(index)
+        if (editNode) {
+            editNode.val = val
+            console.log(editNode)
+            return true
+        }
+        return false
     }
 }
 
@@ -107,4 +117,4 @@ list.push('Five')
 list.push('Six')
 list.push('Seven')
 list.push('Eight')
-console.log(list.get(3))
+console.log(list.set(2, 'THREEEEEE'))
