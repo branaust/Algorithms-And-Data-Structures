@@ -125,6 +125,25 @@ class DoublyLinkedList {
         }
         return null
     }
+
+    remove(index) {
+        if (index < 0 || index >= this.length) return false
+        if (index === 0) !!this.shift()
+        if (index === this.length) !!this.pop()
+
+        let removedNode = this.get(index)
+        let prevNode = removedNode.prev
+        let nextNode = removedNode.next
+
+        if (removedNode) {
+            removedNode.next = null
+            removedNode.prev = null
+            prevNode.next = nextNode
+            nextNode.prev = prevNode
+            this.length--
+            return removedNode
+        }
+    }
 }
 
 let list = new DoublyLinkedList
