@@ -106,6 +106,20 @@ class DoublyLinkedList {
         }
         return false
     }
+
+    insert(index, val) {
+        let newNode = new Node(val)
+        let nextNode = this.get(index)
+        let prevNode = nextNode.prev
+        if (nextNode) {
+            prevNode.next = newNode
+            newNode.prev = prevNode
+            newNode.next = nextNode
+            nextNode.prev = newNode
+            return newNode
+        }
+        return null
+    }
 }
 
 let list = new DoublyLinkedList
@@ -117,4 +131,4 @@ list.push('Five')
 list.push('Six')
 list.push('Seven')
 list.push('Eight')
-console.log(list.set(2, 'THREEEEEE'))
+console.log(list.insert(3, 'Three.5'))
