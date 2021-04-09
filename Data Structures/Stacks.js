@@ -31,9 +31,11 @@ class Stack {
         if (!this.first) {
             return undefined
         }
+        else if (this.first === this.last) {
+            this.last = null
+        }
         else {
-            let newFirst = this.first.next;
-            this.first = newFirst
+            this.first = this.first.next;
             this.size--
             return this
         }
