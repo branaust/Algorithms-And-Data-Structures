@@ -48,7 +48,8 @@ class BinarySearchTree {
                     } else {
                         current = current.right
                     }
-
+                } else if (value === current.value) {
+                    return undefined
                 }
             }
 
