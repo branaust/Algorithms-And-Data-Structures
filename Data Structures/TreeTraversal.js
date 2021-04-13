@@ -62,8 +62,8 @@ class BinarySearchTree {
         while (queue.length) {
             node = queue.shift()
             data.push(node.value)
-            if (node.left) queue.push(node.left)
-            if (node.right) queue.push(node.right)
+            node.left && queue.push(node.left)
+            node.right && queue.push(node.right)
         }
         return data
     }
@@ -72,8 +72,8 @@ class BinarySearchTree {
         let data = []
         const traverse = (node) => {
             data.push(node.value)
-            if (node.left) traverse(node.left)
-            if (node.right) traverse(node.right)
+            node.left && traverse(node.left)
+            node.right && traverse(node.right)
         }
         traverse(this.root)
         return data
@@ -82,8 +82,8 @@ class BinarySearchTree {
     postOrder() {
         let data = []
         const traverse = (node) => {
-            if (node.left) traverse(node.left)
-            if (node.right) traverse(node.right)
+            node.left && traverse(node.left)
+            node.right && traverse(node.right)
             data.push(node.value)
         }
         traverse(this.root)
@@ -93,9 +93,9 @@ class BinarySearchTree {
     inOrder() {
         let data = []
         const traverse = (node) => {
-            if (node.left) traverse(node.left)
+            node.left && traverse(node.left)
             data.push(node.value)
-            if (node.right) traverse(node.right)
+            node.right && traverse(node.right)
         }
         traverse(this.root)
         return data
