@@ -100,6 +100,17 @@ class BinarySearchTree {
         traverse(this.root)
         return data
     }
+
+    findSame(arr1, arr2, arr3) {
+        for (let i = 0; i < arr1.length; i++) {
+            if (arr1[i] === arr2[i]) {
+                if (arr2[i] === arr3[i]) {
+                    return i
+                }
+            }
+        }
+        return false
+    }
 }
 
 
@@ -114,3 +125,7 @@ tree.insert(20)
 console.log(tree.preOrder())
 console.log(tree.postOrder())
 console.log(tree.inOrder())
+let arr1 = tree.preOrder()
+let arr2 = tree.postOrder()
+let arr3 = tree.inOrder()
+console.log(tree.findSame(arr1, arr2, arr3))
