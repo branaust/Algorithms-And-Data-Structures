@@ -14,6 +14,6 @@ function isSubsequence(str1, str2) {
 }
 
 let string1 = 'hey all'
-let string2 = 'hey allsssss'
+let string2 = 'hhhey allsssss'
 
 console.log(isSubsequence(string1, string2))
