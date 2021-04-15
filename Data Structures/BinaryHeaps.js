@@ -5,13 +5,14 @@ class MaxBinaryHeap {
     constructor() {
         this.values = []
     }
-    insert(value) {
-        this.values.push(value)
+    insert(element) {
+        this.values.push(element)
         let index = this.values.length - 1
-        let parentIndex = Math.floor((index - 1) / 2)
-
-        while (this.values[parentIndex] < this.values[index]) {
+        while (index > 0) {
+            let parentIndex = Math.floor((index - 1) / 2)
             let swap = this.values[parentIndex]
+            if (this.values[index] <= swap) break
+
             this.values[parentIndex] = this.values[index]
             this.values[index] = swap
             index = parentIndex
@@ -24,11 +25,10 @@ class MaxBinaryHeap {
 
 let newMaxHeap = new MaxBinaryHeap()
 
-newMaxHeap.insert(4)
 newMaxHeap.insert(12)
 newMaxHeap.insert(27)
-newMaxHeap.insert(3)
+newMaxHeap.insert(33)
+newMaxHeap.insert(41)
 newMaxHeap.insert(18)
-newMaxHeap.insert(6)
-console.log(newMaxHeap.insert(22))
-console.log(newMaxHeap.insert(9))
+newMaxHeap.insert(39)
+console.log(newMaxHeap.insert(55))
