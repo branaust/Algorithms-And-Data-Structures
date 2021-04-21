@@ -11,4 +11,4 @@ const hash = (key, arrayLen) => {
     return total
 }
 
-console.log(hash("yellow", 10))
+console.log(hash("purp", 5))
