@@ -1,6 +1,8 @@
 // HASH TABLES - A data structure that is used to store keys/value pairs.
 // It uses a hash function to compute an index into an array in which an element will be inserted
 
+const { Hash } = require("node:crypto");
+
 // Seperate Chaining - at each index in our array we store values using a more sophisticated data structure (an array or linked list)
 // Linear Probing - when we find a collision, we search through the array to find the next empty slot
 
@@ -31,6 +33,12 @@ class HashTable {
         }
         return total
     }
+    set(key, value) {
+        let index = this._hash(key);
+        return index
+    }
 }
 
-console.log(hash("purples", 49))
+let ht = new HashTable
+ht.set('HEY MAN', "Goodbye")
+
