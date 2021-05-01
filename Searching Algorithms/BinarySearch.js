@@ -1,3 +1,8 @@
+// SORTED ARRAYS ONLY
+// [1,3,4,6,8,9,11,12,15,16,17,18,19]
+//  L            M                 R
+// IF TARGET IS GREATER THAN THE MIDDLE, MOVE LEFT TO MIDDLE + 1, RECALC MIDDLE
+
 const binarySearch = (arr, target) => {
     let left = 0
     let right = arr.length - 1
